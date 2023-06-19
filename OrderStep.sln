@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderStep.Form", "OrderStep.Api\OrderStep.Form.csproj", "{89972181-B69B-4075-845B-FBD2510FA073}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderStep.Form", "OrderStep.Form\OrderStep.Form.csproj", "{89972181-B69B-4075-845B-FBD2510FA073}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderStep.Infrastracture", "OrderStep.Infrastracture\OrderStep.Infrastracture.csproj", "{80157D42-8A5F-456D-B7E4-094231BF95F8}"
 EndProject
