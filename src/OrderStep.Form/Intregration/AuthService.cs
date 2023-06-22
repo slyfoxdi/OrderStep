@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using OrderStep.Api.Extension.Helper;
 using OrderStep.Api.Model;
 using OrderStep.Api.Model.Request;
 using OrderStep.Domain.Extension.Http;
@@ -20,7 +21,7 @@ namespace OrderStep.Api.Intregration
 
         public async Task<Client> Authentification(string login, string password)
         {
-            var request = new AuthRequest(login, password);
+            var request = new AuthRequest(login, PasswordCrypt.CreateMD5(password));
             var result = await _httpClientService.GetAsync("api/Auth/Authentification", request);
             var content = await result.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<Client>(content);

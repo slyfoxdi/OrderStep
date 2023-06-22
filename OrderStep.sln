@@ -5,11 +5,15 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderStep.Form", "src\OrderStep.Form\OrderStep.Form.csproj", "{89972181-B69B-4075-845B-FBD2510FA073}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderStep.Infrastracture", "src\OrderStep.Infrastracture\OrderStep.Infrastracture.csproj", "{80157D42-8A5F-456D-B7E4-094231BF95F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderStep.Infrastracture", "src\OrderStep.Infrastracture\OrderStep.Infrastracture.csproj", "{80157D42-8A5F-456D-B7E4-094231BF95F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderStep.Domain", "src\OrderStep.Domain\OrderStep.Domain.csproj", "{40B69086-5328-4616-B22B-97896E184F18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderStep.Domain", "src\OrderStep.Domain\OrderStep.Domain.csproj", "{40B69086-5328-4616-B22B-97896E184F18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderStep.WebApi", "src\OrderStep.WebApi\OrderStep.WebApi.csproj", "{E6F60670-B360-4C0E-9364-E8C9312EA8BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderStep.WebApi", "src\OrderStep.WebApi\OrderStep.WebApi.csproj", "{E6F60670-B360-4C0E-9364-E8C9312EA8BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderStep.Core", "src\OrderStep.Core\OrderStep.Core.csproj", "{BDDA5389-31DC-479F-94B5-1FAB42869D61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderStep.Application", "src\OrderStep.Application\OrderStep.Application.csproj", "{156BCCD1-1AA5-48C7-ABD7-5486DFA9E040}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{E6F60670-B360-4C0E-9364-E8C9312EA8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6F60670-B360-4C0E-9364-E8C9312EA8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6F60670-B360-4C0E-9364-E8C9312EA8BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDDA5389-31DC-479F-94B5-1FAB42869D61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDDA5389-31DC-479F-94B5-1FAB42869D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDDA5389-31DC-479F-94B5-1FAB42869D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDDA5389-31DC-479F-94B5-1FAB42869D61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{156BCCD1-1AA5-48C7-ABD7-5486DFA9E040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{156BCCD1-1AA5-48C7-ABD7-5486DFA9E040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{156BCCD1-1AA5-48C7-ABD7-5486DFA9E040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{156BCCD1-1AA5-48C7-ABD7-5486DFA9E040}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,6 +10,8 @@ namespace OrderStep.Infrastracture.Context
 {
     public class ApplicationContext : DbContext
     {
+        #region Права доступа
+
         /// <summary>
         /// Пользователь
         /// </summary>
@@ -29,14 +31,36 @@ namespace OrderStep.Infrastracture.Context
         /// Пользователи и права доступа
         /// </summary>
         public DbSet<UserAndRight> UserAndRights { get; set; }
+        
+        /// <summary>
+        /// Данные для входа
+        /// </summary>
+        public DbSet<Credential> Credits { get; set; }
 
-        public ApplicationContext() : base()
+        #endregion
+
+        private string _connectionString;
+
+        public ApplicationContext(string connectionString)
         {
+            _connectionString = connectionString;
         }
+
+        public ApplicationContext(DbContextOptions<ApplicationContext> options)
+            : base(options)
+        {
+            //Database.EnsureDeleted();
+        }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(_connectionString);
+            }
+
+            base.OnConfiguring(optionsBuilder);
         }
     }
 }

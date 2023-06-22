@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\AutofacConfig.cs" />
+    <Compile Include="Extension\Helper\PasswordCrypt.cs" />
     <Compile Include="Extension\Helper\UrlBuilder.cs" />
     <Compile Include="Extension\Http\IHttpClientService.cs" />
     <Compile Include="Extension\Http\OrderStepHttpClientService.cs" />
@@ -124,6 +125,8 @@
     <Compile Include="Intregration\AuthService.cs" />
     <Compile Include="Intregration\IAuthService.cs" />
     <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\Enum\ActionType.cs" />
+    <Compile Include="Model\Enum\RightType.cs" />
     <Compile Include="Model\Request\AuthRequest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
