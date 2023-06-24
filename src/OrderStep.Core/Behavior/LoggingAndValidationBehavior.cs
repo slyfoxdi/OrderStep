@@ -2,11 +2,6 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using static OrderStep.Core.Helper.MessageFormatterHelper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrderStep.Core.Behavior
 {

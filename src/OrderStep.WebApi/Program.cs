@@ -1,16 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using OrderStep.Infrastracture.Context;
 using OrderStep.Infrastructure.App;
-using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
 using OrderStep.WebApi.Configuration.Profiles;
 using OrderStep.Core.Configuration.Profiles;
-using OrderStep.WebApi.Extension;
-using MediatR;
-using FluentValidation;
-using NLog.Extensions.Logging;
 using NLog;
 using NLog.Web;
 

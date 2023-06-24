@@ -1,24 +1,13 @@
-﻿using AutoMapper;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OrderStep.Application.Command.Authentification;
 using OrderStep.WebApi.Model;
 
 namespace OrderStep.WebApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class AuthController : Controller
+    [Route("api/Auth")]
+    public partial class BaseController
     {
-        private readonly IMediator _mediator;
-        private readonly IMapper _mapper;
-
-        public AuthController(IMediator mediator, IMapper mapper)
-        {
-            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-        }
-
         /// <summary>
         /// Авторизация клиента
         /// </summary>
@@ -32,11 +21,12 @@ namespace OrderStep.WebApi.Controllers
                 var command = new AuthentificationCommand(login, password);
                 var request = await _mediator.Send(command, cancellationToken);
                 var result = _mapper.Map<BaseResponse<Client>>(request);
-
+                throw new Exception();
                 return result;
             }
             catch(Exception ex)
             {
+                _logger.LogDebug("Ошибка при вызове метода авторизации");
                 return null;
             }
         }

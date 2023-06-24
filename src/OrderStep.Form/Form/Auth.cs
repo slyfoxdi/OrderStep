@@ -14,13 +14,13 @@ namespace OrderStep.Api
 {
     public partial class Auth : Form
     {
-        private readonly IAuthService _authService;
+        private readonly IAuthReference _authService;
 
         public Auth()
         {
             InitializeComponent();
             var httpClientService = new OrderStepHttpClientService("http://localhost:5143/", string.Empty, string.Empty);
-            _authService = new AuthService(httpClientService);
+            _authService = new AuthReference(httpClientService);
         }
                 
         private void buttonAuth_Click(object sender, EventArgs e)
@@ -29,10 +29,8 @@ namespace OrderStep.Api
             var password = passwordTextBox.Text;
 
             var auth = _authService.Authentification(login, password);
-            if(auth != null)
-            {
-                label1.Text = "Успешная авторизация";
-            }
+            
+
         }
     }
 }

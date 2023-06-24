@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Api.Intregration
 {
-    public class AuthService : IAuthService
+    public class AuthReference : IAuthReference
     {
         private readonly IHttpClientService _httpClientService;
 
-        public AuthService(IHttpClientService httpClientService) {
+        public AuthReference(IHttpClientService httpClientService) {
             _httpClientService = httpClientService;
         }
 

@@ -125,8 +125,8 @@
     <Compile Include="Form\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Intregration\AuthService.cs" />
-    <Compile Include="Intregration\IAuthService.cs" />
+    <Compile Include="Intregration\AuthReference.cs" />
+    <Compile Include="Intregration\IAuthReference.cs" />
     <Compile Include="Model\BaseResponse.cs" />
     <Compile Include="Model\Response\Client.cs" />
     <Compile Include="Model\Enum\ActionType.cs" />

@@ -24,7 +24,7 @@ namespace OrderStep.Api.Configuration
 
             // регистрируем споставление типов
             builder.RegisterType<OrderStepHttpClientService>().As<IHttpClientService>();
-            builder.RegisterType<AuthService>().As<IAuthService>();
+            builder.RegisterType<AuthReference>().As<IAuthReference>();
 
             // создаем новый контейнер с теми зависимостями, которые определены выше
             var container = builder.Build();
