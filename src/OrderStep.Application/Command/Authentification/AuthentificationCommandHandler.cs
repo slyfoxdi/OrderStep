@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using OrderStep.Core.Model;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,26 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Application.Command.Authentification
 {
-    public class AuthentificationCommandHandler : IRequestHandler<AuthentificationCommand, Client>
+    public class AuthentificationCommandHandler : IRequestHandler<AuthentificationCommand, BaseResponse<Client>>
     {
-        public AuthentificationCommandHandler() { }
-
-        public async Task<Client> Handle(AuthentificationCommand command, CancellationToken cancellationToken)
+        private readonly ILogger<AuthentificationCommandHandler> _logger;
+        public AuthentificationCommandHandler(ILogger<AuthentificationCommandHandler> logger)
         {
-            return null;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
+
+        public async Task<BaseResponse<Client>> Handle(AuthentificationCommand command, CancellationToken cancellationToken)
+        {
+            return new BaseResponse<Client>()
+            {
+                SessionId = "123ASD",
+                Status = 200,
+                Response = new Client()
+                {
+                    Id = 1,
+                    FitstName = "Дмитрий",
+                }
+            };
         }
     }
 }

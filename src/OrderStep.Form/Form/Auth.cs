@@ -28,7 +28,11 @@ namespace OrderStep.Api
             var login = loginTextBox.Text;
             var password = passwordTextBox.Text;
 
-            _authService.Authentification(login, password);
+            var auth = _authService.Authentification(login, password);
+            if(auth != null)
+            {
+                label1.Text = "Успешная авторизация";
+            }
         }
     }
 }

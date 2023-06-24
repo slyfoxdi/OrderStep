@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Api.Intregration
 {
-    internal interface IAuthService
+    public interface IAuthService
     {
-        Task<Client> Authentification(string login, string password);
+        BaseResponse<Client> Authentification(string login, string password);
     }
 }

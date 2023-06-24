@@ -1,7 +1,8 @@
 ﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using OrderStep.Core.Behavior;
 
-namespace OrderStep.WebApi.Extensions
+namespace OrderStep.WebApi.Extension
 {
     public static class MediatorBehavioursExtensions
     {

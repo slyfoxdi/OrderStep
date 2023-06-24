@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Domain.Extension.Http
 {
-    internal interface IHttpClientService
+    public interface IHttpClientService
     {
-        Task<HttpResponseMessage> GetAsync(string responseUrl);
+        HttpResponseMessage GetAsync(string responseUrl);
 
-        Task<HttpResponseMessage> GetAsync<TRequest>(string responseUrl, TRequest request);
+        HttpResponseMessage Get<TRequest>(string responseUrl, TRequest request);
 
-        Task<HttpResponseMessage> PostAsync(HttpResponseMessage response);
+        HttpResponseMessage PostAsync(HttpResponseMessage response);
     }
 }

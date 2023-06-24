@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Api.Intregration
 {
-    internal class AuthService : IAuthService
+    public class AuthService : IAuthService
     {
         private readonly IHttpClientService _httpClientService;
 
@@ -19,12 +19,13 @@ namespace OrderStep.Api.Intregration
             _httpClientService = httpClientService;
         }
 
-        public async Task<Client> Authentification(string login, string password)
+        public BaseResponse<Client> Authentification(string login, string password)
         {
             var request = new AuthRequest(login, PasswordCrypt.CreateMD5(password));
-            var result = await _httpClientService.GetAsync("api/Auth/Authentification", request);
-            var content = await result.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<Client>(content);
+            var result = _httpClientService.Get("api/Auth/Authentification", request);
+            var content = result.Content.ReadAsStringAsync().Result;
+            var response = JsonConvert.DeserializeObject<BaseResponse<Client>>(content);
+            return response;
         }
     }
 }
