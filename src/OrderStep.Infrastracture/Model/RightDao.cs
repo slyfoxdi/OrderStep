@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Infrastracture.Model
 {
-    public class Right
+    public class RightDao
     {
         [Key]
-        public int RightId { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Описание возможности действия

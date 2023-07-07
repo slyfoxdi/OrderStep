@@ -15,27 +15,27 @@ namespace OrderStep.Infrastracture.Context
         /// <summary>
         /// Пользователь
         /// </summary>
-        public DbSet<User> Users { get; set; }
+        public DbSet<UserDao> Users { get; set; }
 
         /// <summary>
         /// Права доступа
         /// </summary>
-        public DbSet<Right> Rights { get; set; }
+        public DbSet<RightDao> Rights { get; set; }
 
         /// <summary>
         /// Действия
         /// </summary>
-        public DbSet<Actions> Actions { get; set; }
+        public DbSet<ActionsDao> Actions { get; set; }
 
         /// <summary>
         /// Пользователи и права доступа
         /// </summary>
-        public DbSet<UserAndRight> UserAndRights { get; set; }
+        public DbSet<UserAndRightDao> UserAndRights { get; set; }
         
         /// <summary>
         /// Данные для входа
         /// </summary>
-        public DbSet<Credential> Credits { get; set; }
+        public DbSet<CredentialDao> Credits { get; set; }
 
         #endregion
 

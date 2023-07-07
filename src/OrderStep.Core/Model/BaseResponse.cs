@@ -1,4 +1,6 @@
-﻿namespace OrderStep.Core.Model
+﻿using OrderStep.Core.Enum;
+
+namespace OrderStep.Core.Model
 {
     public class BaseResponse <T>
     {
@@ -10,11 +12,16 @@
         /// <summary>
         /// Http Status
         /// </summary>
-        public int Status { get; set; }
+        public StatusCode Status { get; set; }
 
         /// <summary>
         /// Ответ
         /// </summary>
         public T Response { get; set; }
+
+        /// <summary>
+        /// Ответ для уведомлялки
+        /// </summary>
+        public string Message { get; set; }
     }
 }

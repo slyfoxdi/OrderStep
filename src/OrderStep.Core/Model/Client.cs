@@ -16,7 +16,7 @@ namespace OrderStep.Core.Model
         /// <summary>
         ///  Имя
         /// </summary>
-        public string FitstName { get; set; }
+        public string FirstName { get; set; }
 
         /// <summary>
         /// Фамилия

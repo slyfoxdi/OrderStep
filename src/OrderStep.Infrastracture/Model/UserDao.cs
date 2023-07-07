@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Infrastracture.Model
 {
-    public class User
+    public class UserDao
     {
         [Key]
-        public int UserId { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         ///     Имя

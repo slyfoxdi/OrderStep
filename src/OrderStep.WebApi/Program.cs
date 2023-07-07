@@ -3,9 +3,9 @@ using OrderStep.Infrastracture.Context;
 using OrderStep.Infrastructure.App;
 using AutoMapper;
 using OrderStep.WebApi.Configuration.Profiles;
-using OrderStep.Core.Configuration.Profiles;
 using NLog;
 using NLog.Web;
+using OrderStep.Application.Configuration.Profiles;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 
@@ -32,6 +32,9 @@ try
             options.UseSqlServer(connection);
         }, ServiceLifetime.Transient);
 
+    // Added DI
+    builder.Services
+        .AddOperationService();
 
     // Added MediatR
     builder.Services

@@ -31,7 +31,7 @@
             this.buttonAuth = new System.Windows.Forms.Button();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.authLabel1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -66,15 +66,16 @@
             this.passwordTextBox.Size = new System.Drawing.Size(172, 33);
             this.passwordTextBox.TabIndex = 2;
             // 
-            // label1
+            // authLabel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(110, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Авторизация в систему";
+            this.authLabel1.AutoEllipsis = true;
+            this.authLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.authLabel1.Location = new System.Drawing.Point(1, 42);
+            this.authLabel1.Name = "authLabel1";
+            this.authLabel1.Size = new System.Drawing.Size(400, 21);
+            this.authLabel1.TabIndex = 3;
+            this.authLabel1.Text = "Авторизация в систему";
+            this.authLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -101,7 +102,7 @@
             this.ClientSize = new System.Drawing.Size(402, 435);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.authLabel1);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.buttonAuth);
@@ -117,7 +118,7 @@
         private System.Windows.Forms.Button buttonAuth;
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label authLabel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
     }

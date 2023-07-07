@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Infrastracture.Model
 {
-    public class UserAndRight
+    public class UserAndRightDao
     {
         [Key]
         public int Id { get; set; }
@@ -15,16 +15,16 @@ namespace OrderStep.Infrastracture.Model
         /// <summary>
         /// Клиент
         /// </summary>
-        public User? User { get; set; }
+        public UserDao? User { get; set; }
 
         /// <summary>
         /// Действие
         /// </summary>
-        public Actions? Action { get; set; }
+        public ActionsDao? Action { get; set; }
 
         /// <summary>
         /// Статус доступности
         /// </summary>
-        public Right? Right { get; set; }
+        public RightDao? Right { get; set; }
     }
 }

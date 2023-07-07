@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderStep.Api.Model.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,16 @@ namespace OrderStep.Api.Model
         /// <summary>
         /// Http Status
         /// </summary>
-        public int Status { get; set; }
+        public StatusCode Status { get; set; }
 
         /// <summary>
         /// Ответ
         /// </summary>
         public T Response { get; set; }
+
+        /// <summary>
+        /// Ответ для уведомлялки
+        /// </summary>
+        public string Message { get; set; }
     }
 }

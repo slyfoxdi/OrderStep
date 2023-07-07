@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Infrastracture.Model
 {
-    public class Credential
+    public class CredentialDao
     {
         [Key]
         public int Id { get; set; }
@@ -16,6 +16,6 @@ namespace OrderStep.Infrastracture.Model
 
         public string Password { get; set; }
 
-        public User? User { get; set; }
+        public UserDao? User { get; set; }
     }
 }

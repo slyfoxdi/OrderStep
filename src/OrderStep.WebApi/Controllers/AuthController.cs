@@ -17,11 +17,12 @@ namespace OrderStep.WebApi.Controllers
         [HttpGet(nameof(Authentification))]
         public async Task<BaseResponse<Client>> Authentification(string login, string password, CancellationToken cancellationToken)
         {
-            try{
+            try
+            {
                 var command = new AuthentificationCommand(login, password);
                 var request = await _mediator.Send(command, cancellationToken);
                 var result = _mapper.Map<BaseResponse<Client>>(request);
-                throw new Exception();
+
                 return result;
             }
             catch(Exception ex)

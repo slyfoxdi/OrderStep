@@ -19,12 +19,14 @@ namespace OrderStep.Api.Intregration
             _httpClientService = httpClientService;
         }
 
+        /// <inheritdoc/>>
         public BaseResponse<Client> Authentification(string login, string password)
         {
             var request = new AuthRequest(login, PasswordCrypt.CreateMD5(password));
             var result = _httpClientService.Get("api/Auth/Authentification", request);
             var content = result.Content.ReadAsStringAsync().Result;
             var response = JsonConvert.DeserializeObject<BaseResponse<Client>>(content);
+
             return response;
         }
     }

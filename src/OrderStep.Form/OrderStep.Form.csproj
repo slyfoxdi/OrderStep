@@ -68,6 +68,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -119,15 +120,18 @@
     <Compile Include="Form\Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Main.cs">
+    <Compile Include="Form\Order.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="Form\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ThreadHelper.cs" />
     <Compile Include="Intregration\AuthReference.cs" />
     <Compile Include="Intregration\IAuthReference.cs" />
     <Compile Include="Model\BaseResponse.cs" />
+    <Compile Include="Model\Enum\StatusCode.cs" />
+    <Compile Include="Model\Request\OrderRequest.cs" />
     <Compile Include="Model\Response\Client.cs" />
     <Compile Include="Model\Enum\ActionType.cs" />
     <Compile Include="Model\Enum\RightType.cs" />
@@ -137,8 +141,8 @@
     <EmbeddedResource Include="Form\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="Form\Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
