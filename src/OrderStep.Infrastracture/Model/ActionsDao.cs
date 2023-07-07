@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Infrastracture.Model
 {
-    public class ActionsDao
+    internal class ActionsDao
     {
         [Key]
         public int Id { get; set; }

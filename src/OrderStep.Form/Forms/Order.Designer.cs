@@ -48,7 +48,6 @@
             this.saveButton3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -136,12 +135,11 @@
             this.Col5,
             this.Col6,
             this.Col7});
-            this.dataGridView1.Location = new System.Drawing.Point(324, 176);
+            this.dataGridView1.Location = new System.Drawing.Point(318, 176);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1276, 615);
+            this.dataGridView1.Size = new System.Drawing.Size(1283, 615);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-
             // 
             // Col1
             // 
@@ -258,26 +256,12 @@
             this.button2.Text = "Заказы";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Gray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(18, 278);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(281, 45);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Доставка";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1622, 814);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.saveButton3);
@@ -311,7 +295,6 @@
         private System.Windows.Forms.Button saveButton3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3;
