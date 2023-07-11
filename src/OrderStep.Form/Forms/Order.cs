@@ -1,4 +1,6 @@
-﻿using OrderStep.Api.Model;
+﻿using OrderStep.Api.Extension.Http;
+using OrderStep.Api.Intregration;
+using OrderStep.Api.Model;
 using OrderStep.Api.Model.Request;
 using System;
 using System.Collections.Generic;
@@ -15,12 +17,15 @@ namespace OrderStep.Api
     public partial class Order : Form
     {
         Timer Timer = new Timer();
+        private readonly IOrderReference _orderReference;
 
         public Order(params object[] arg)
         {
             InitializeComponent();
             StartTime();
             Load(arg);
+            var httpClientService = new OrderStepHttpClientService("http://localhost:5143/", string.Empty, string.Empty);
+            _orderReference = new OrderReference(httpClientService);
         }
 
         private void Load(object[] arg)
@@ -45,7 +50,14 @@ namespace OrderStep.Api
 
         private void addButton2_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Add(dataGridView1.Rows.Count.ToString());
+            var freeOrderId = _orderReference.GetFreeOrderId();
+
+            if(freeOrderId.Status != Model.Enum.StatusCode.Success)
+            {
+                return;
+            }
+
+            dataGridView1.Rows.Add(freeOrderId.Response.ToString());
         }
 
         private void deleteButton1_Click(object sender, EventArgs e)
@@ -94,12 +106,14 @@ namespace OrderStep.Api
                     Weight = dataGridRow.Cells[3].Value.ToString() ?? string.Empty,
                     Count = int.Parse(dataGridRow.Cells[4].Value.ToString() ?? string.Empty),
                     Address = dataGridRow.Cells[5].Value.ToString() ?? string.Empty,
-                    Price = double.Parse(dataGridRow.Cells[6].Value.ToString() ?? string.Empty)
+                    Price = double.Parse(dataGridRow.Cells[6].Value.ToString() ?? string.Empty),
+                    TransferStatus = Model.Enum.TransferType.New
                 };
 
                 orderList.Add(order);
             }
-            
+
+            var result = _orderReference.SaveOrder(orderList);
         }
     }
 }

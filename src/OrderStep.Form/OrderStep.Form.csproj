@@ -135,8 +135,11 @@
     <Compile Include="Helper\ThreadHelper.cs" />
     <Compile Include="Intregration\AuthReference.cs" />
     <Compile Include="Intregration\IAuthReference.cs" />
+    <Compile Include="Intregration\IOrderReference.cs" />
+    <Compile Include="Intregration\OrderReference.cs" />
     <Compile Include="Model\BaseResponse.cs" />
     <Compile Include="Model\Enum\StatusCode.cs" />
+    <Compile Include="Model\Enum\TransferType.cs" />
     <Compile Include="Model\Request\OrderRequest.cs" />
     <Compile Include="Model\Response\Client.cs" />
     <Compile Include="Model\Enum\ActionType.cs" />

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderStep.Infrastracture.Model
+namespace OrderStep.Api.Model.Enum
 {
-    public enum TransferStatusDao
+    public enum TransferType
     {
         /// <summary>
         /// Новый

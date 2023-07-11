@@ -4,7 +4,6 @@ using OrderStep.WebApi.Model;
 
 namespace OrderStep.WebApi.Controllers
 {
-    [ApiController]
     [Route("api/Auth")]
     public partial class BaseController
     {

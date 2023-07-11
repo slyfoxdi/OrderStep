@@ -1,36 +1,33 @@
-﻿using System;
+﻿using OrderStep.WebApi.Enum;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderStep.Infrastracture.Model
+namespace OrderStep.WebApi.Model
 {
-    public class OrderDao
+    public class Order
     {
-        [Key]
-        public int Id { get; set; }
-
         /// <summary>
         /// Id заказа
         /// </summary>
-        public int OrderId { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Артикул
         /// </summary>
-        public string? VendorCode { get; set; }
+        public string VendorCode { get; set; }
 
         /// <summary>
         /// Наименование
         /// </summary>
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Вес
         /// </summary>
-        public string? Weight { get; set; }
+        public string Weight { get; set; }
 
         /// <summary>
         /// Кол-во
@@ -40,7 +37,7 @@ namespace OrderStep.Infrastracture.Model
         /// <summary>
         /// Адрес доставки
         /// </summary>
-        public string? Address { get; set; }
+        public string Address { get; set; }
 
         /// <summary>
         /// Цена
@@ -53,13 +50,8 @@ namespace OrderStep.Infrastracture.Model
         public DateTime DateCreate { get; set; } = DateTime.Now;
 
         /// <summary>
-        /// Дата последнего обновления
-        /// </summary>
-        public DateTime DateLastUpdate { get; set; } = DateTime.Now;
-
-        /// <summary>
         /// Статус заказа
         /// </summary>
-        public TransferStatusDao TransferStatus { get; set; }
+        public TransferType TransferStatus { get; set; }
     }
 }

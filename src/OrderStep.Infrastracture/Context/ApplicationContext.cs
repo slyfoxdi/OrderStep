@@ -37,6 +37,11 @@ namespace OrderStep.Infrastracture.Context
         /// </summary>
         public DbSet<CredentialDao> Credits { get; set; }
 
+        /// <summary>
+        /// Заказы
+        /// </summary>
+        public DbSet<OrderDao> Orders { get; set; }
+
         #endregion
 
         private string _connectionString;

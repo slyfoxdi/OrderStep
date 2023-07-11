@@ -22,7 +22,7 @@ namespace OrderStep.Api.Extension.Http
             _password = password;  
         }
 
-        public HttpResponseMessage GetAsync(string responseUrl)
+        public HttpResponseMessage Get(string responseUrl)
         {
             return _GetAsync(UrlBuilder.BuildRequestUrl(_baseUrl, responseUrl));
         }

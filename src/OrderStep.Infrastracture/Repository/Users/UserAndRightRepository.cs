@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderStep.Infrastracture.Repository.User
+namespace OrderStep.Infrastracture.Repository.Users
 {
     public class UserAndRightRepository : IUserAndRightRepository
     {

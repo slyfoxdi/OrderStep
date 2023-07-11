@@ -1,6 +1,6 @@
 ﻿using OrderStep.Infrastracture.Model;
 
-namespace OrderStep.Infrastracture.Repository.User
+namespace OrderStep.Infrastracture.Repository.Users
 {
     public interface IUserAndRightRepository
     {

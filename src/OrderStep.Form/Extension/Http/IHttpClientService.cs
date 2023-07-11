@@ -9,7 +9,7 @@ namespace OrderStep.Domain.Extension.Http
 {
     public interface IHttpClientService
     {
-        HttpResponseMessage GetAsync(string responseUrl);
+        HttpResponseMessage Get(string responseUrl);
 
         HttpResponseMessage Get<TRequest>(string responseUrl, TRequest request);
 

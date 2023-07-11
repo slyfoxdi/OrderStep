@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderStep.Infrastracture.Repository.Credential
+namespace OrderStep.Infrastracture.Repository.Credentials
 {
     public interface ICredentialRepository
     {

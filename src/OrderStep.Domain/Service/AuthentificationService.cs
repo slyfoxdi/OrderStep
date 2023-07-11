@@ -1,8 +1,8 @@
 ﻿using OrderStep.Core.Enum;
 using OrderStep.Core.Exceptions;
 using OrderStep.Core.Model;
-using OrderStep.Infrastracture.Repository.Credential;
-using OrderStep.Infrastracture.Repository.User;
+using OrderStep.Infrastracture.Repository.Credentials;
+using OrderStep.Infrastracture.Repository.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;

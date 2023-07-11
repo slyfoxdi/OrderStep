@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderStep.Infrastracture.Repository.User
+namespace OrderStep.Infrastracture.Repository.Users
 {
     public class UserRepository : IUserRepository
     {
@@ -23,7 +23,7 @@ namespace OrderStep.Infrastracture.Repository.User
             var user = await _context.Users
                 .FindAsync(clientCode, cancellationToken);
 
-            if(user == null)
+            if (user == null)
             {
                 throw new InfrastractureException("Не удалось авторизоваться");
             }

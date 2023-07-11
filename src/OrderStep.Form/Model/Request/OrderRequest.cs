@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderStep.Api.Model.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,5 +48,7 @@ namespace OrderStep.Api.Model.Request
         /// Дата создания обращения
         /// </summary>
         public DateTime DateCreate { get; set; } = DateTime.Now;
+
+        public TransferType TransferStatus { get; set; }
     }
 }
