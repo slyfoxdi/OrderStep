@@ -10,14 +10,14 @@ namespace OrderStep.WebApi.Controllers
     [Route("api/Order")]
     public partial class BaseController
     {
-        [HttpGet(nameof(SaveOrder))]
-        public async Task<BaseResponse<bool>> SaveOrder(IList<Order> order, CancellationToken cancellationToken)
+        [HttpPost(nameof(SaveOrder))]
+        public async Task<BaseResponse<bool>> SaveOrder(Order order, CancellationToken cancellationToken)
         {
             try
             {
                 var command = new SaveOrderCommand()
                 {
-                    Request = _mapper.Map<IList<CoreApp.Order>>(order),
+                    Request = _mapper.Map<CoreApp.Order>(order),
                 };
 
                 var request = await _mediator.Send(command, cancellationToken);
@@ -27,8 +27,8 @@ namespace OrderStep.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogDebug("Ошибка при вызове метода авторизации");
-                return null;
+                _logger.LogDebug("Ошибка при вызове метода сохранинея заказа");
+                return new BaseResponse<bool>() { Status = Enum.StatusCode.FailedSaveOrder, Response = false };
             }
         }
 

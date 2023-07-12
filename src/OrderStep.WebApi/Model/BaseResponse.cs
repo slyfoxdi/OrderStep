@@ -1,4 +1,4 @@
-﻿using OrderStep.Core.Enum;
+﻿using OrderStep.WebApi.Enum;
 
 namespace OrderStep.WebApi.Model
 {

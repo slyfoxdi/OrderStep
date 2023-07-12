@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderStep.Api.Model.Enum
+namespace OrderStep.WebApi.Enum
 {
     public enum ActionType
     {

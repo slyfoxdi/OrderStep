@@ -14,7 +14,7 @@ namespace OrderStep.Domain.Service
         /// </summary>
         /// <param name="order"></param>
         /// <returns></returns>
-        Task<bool> SaveNewOrder(IList<Order> order, CancellationToken cancellationToken);
+        Task<bool> SaveNewOrder(Order order, CancellationToken cancellationToken);
 
         /// <summary>
         /// Получение последнего id

@@ -2,6 +2,7 @@
 using OrderStep.Api.Intregration;
 using OrderStep.Api.Model;
 using OrderStep.Api.Model.Request;
+using OrderStep.Api.Model.Response;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,13 +85,13 @@ namespace OrderStep.Api
 
         private void saveButton3_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count == 0)
+            if(dataGridView1.Rows.Count == 1)
             {
                 return;
             }
 
-            var orderList = new List<OrderRequest>();
-            
+            var result = new List<BaseResponse<bool>>();
+
             foreach(DataGridViewRow dataGridRow in dataGridView1.Rows)
             {
                 if(dataGridRow.Cells[0].Value == null)
@@ -110,10 +111,13 @@ namespace OrderStep.Api
                     TransferStatus = Model.Enum.TransferType.New
                 };
 
-                orderList.Add(order);
+                result.Add(_orderReference.SaveOrder(order));
             }
 
-            var result = _orderReference.SaveOrder(orderList);
+            if (result.All(x => x.Status == Model.Enum.StatusCode.Success))
+            {
+                dataGridView1.Rows.Clear();
+            }
         }
     }
 }

@@ -12,7 +12,12 @@ namespace OrderStep.Core.Enum
         /// Операция прошла успешно
         /// </summary>
         Success = 0,
-        
+
+        /// <summary>
+        /// Ошибка сохранения
+        /// </summary>
+        FailedSaveOrder = 10,
+
         /// <summary>
         /// Неудачная авторизация
         /// </summary>

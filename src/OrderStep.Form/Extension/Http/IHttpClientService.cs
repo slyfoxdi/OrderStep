@@ -13,6 +13,6 @@ namespace OrderStep.Domain.Extension.Http
 
         HttpResponseMessage Get<TRequest>(string responseUrl, TRequest request);
 
-        HttpResponseMessage PostAsync(HttpResponseMessage response);
+        HttpResponseMessage Post(string responseUrl, string jsonObject);
     }
 }

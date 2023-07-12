@@ -6,6 +6,7 @@ using OrderStep.WebApi.Configuration.Profiles;
 using NLog;
 using NLog.Web;
 using OrderStep.Application.Configuration.Profiles;
+using OrderStep.Domain.Configuration.Profiles;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 
@@ -44,6 +45,7 @@ try
     var mapperConfig = new MapperConfiguration(mc =>
     {
         mc.AddProfile(new ApiProfile());
+        mc.AddProfile(new DomainProfile());
     });
 
     IMapper mapper = mapperConfig.CreateMapper();

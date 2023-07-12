@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderStep.Api.Model
+namespace OrderStep.Api.Model.Response
 {
     public class Client
     {
@@ -29,8 +29,8 @@ namespace OrderStep.Api.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Id роли
+        /// Права доступа
         /// </summary>
-        public int Role { get; set; }
+        public List<UserAndRight> Rights { get; set; }
     }
 }

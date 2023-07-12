@@ -11,6 +11,6 @@ namespace OrderStep.Application.Command.SaveOrder
 {
     public class SaveOrderCommand : IRequest<BaseResponse<bool>>
     {
-        public IList<Order> Request { get; set; }
+        public Order Request { get; set; }
     }
 }

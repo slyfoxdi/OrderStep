@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderStep.Api.Extension.Helper
+namespace OrderStep.Api.Helper
 {
     /// <summary>
     /// Хелпер по построению URL запроса
@@ -34,12 +34,12 @@ namespace OrderStep.Api.Extension.Helper
             var properties = obj.GetType().GetProperties();
             var queryParams = new List<string>();
 
-            foreach ( var property in properties )
+            foreach (var property in properties)
             {
                 var name = property.Name;
                 var value = property.GetValue(obj);
 
-                if(value != null && name != null)
+                if (value != null && name != null)
                     queryParams.AddRange(GetParamString(name, value));
 
             }

@@ -6,28 +6,26 @@ using System.Threading.Tasks;
 
 namespace OrderStep.WebApi.Enum
 {
-    public enum StatusCode
+    public enum AccessType
     {
         /// <summary>
-        /// Операция прошла успешно
+        /// Нет доступа
         /// </summary>
-        Success = 0,
+        None = 1,
 
         /// <summary>
-        /// Ошибка сохранения
+        /// Только показ
         /// </summary>
-        FailedSaveOrder = 10,
+        OnlyView = 2,
 
         /// <summary>
-        /// Неудачная авторизация
+        /// Только редактирование
         /// </summary>
-        FailedAuthentification = 100,
+        OnlyEdit = 3,
 
         /// <summary>
-        /// Неизвестная ошибка
+        /// Полные
         /// </summary>
-        Unknown = 500,
-
-
+        Full = 4
     }
 }

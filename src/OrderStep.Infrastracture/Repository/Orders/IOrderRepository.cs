@@ -15,7 +15,7 @@ namespace OrderStep.Infrastracture.Repository.Orders
         /// <param name="order"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        Task<bool> SaveOrderList(IList<OrderDao> order, CancellationToken cancellationToken);
+        Task<bool> SaveOrder(OrderDao order, CancellationToken cancellationToken);
 
         /// <summary>
         /// Получение свободного id документа

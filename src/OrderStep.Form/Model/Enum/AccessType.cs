@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace OrderStep.Api.Model.Enum
 {
-    public enum RightType
+    public enum AccessType
     {
         /// <summary>
         /// Нет доступа
         /// </summary>
-        Disable = 1,
+        None = 1,
 
         /// <summary>
-        /// Только просмотр
+        /// Только показ
         /// </summary>
         OnlyView = 2,
 
         /// <summary>
-        /// Редактирование
+        /// Только редактирование
         /// </summary>
-        Edit = 3,
+        OnlyEdit = 3,
 
         /// <summary>
-        /// Полные права
+        /// Полные
         /// </summary>
         Full = 4
     }

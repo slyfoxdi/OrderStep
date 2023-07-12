@@ -1,9 +1,10 @@
-﻿using OrderStep.Api.Extension.Helper;
+﻿using OrderStep.Api.Helper;
 using OrderStep.Domain.Extension.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,9 +33,15 @@ namespace OrderStep.Api.Extension.Http
             return _GetAsync(UrlBuilder.BuildRequestUrl(_baseUrl, responseUrl, request));
         }
 
-        public HttpResponseMessage PostAsync(HttpResponseMessage response)
-        {
-            throw new NotImplementedException();
+        public HttpResponseMessage Post(string responseUrl, string jsonObject)
+        { 
+            var content = new StringContent(jsonObject.ToString(), Encoding.UTF8, "application/json");
+            responseUrl = UrlBuilder.BuildRequestUrl(_baseUrl, responseUrl);
+
+            using (var client = CreateHandler())
+            {
+                return client.PostAsync(responseUrl, content).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
         }
 
         private HttpResponseMessage _GetAsync(string responseUrl)

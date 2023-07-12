@@ -110,8 +110,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\AutofacConfig.cs" />
-    <Compile Include="Extension\Helper\PasswordCrypt.cs" />
-    <Compile Include="Extension\Helper\UrlBuilder.cs" />
+    <Compile Include="Helper\PasswordCrypt.cs" />
+    <Compile Include="Helper\UrlBuilder.cs" />
     <Compile Include="Extension\Http\IHttpClientService.cs" />
     <Compile Include="Extension\Http\OrderStepHttpClientService.cs" />
     <Compile Include="Forms\Auth.cs">
@@ -138,13 +138,14 @@
     <Compile Include="Intregration\IOrderReference.cs" />
     <Compile Include="Intregration\OrderReference.cs" />
     <Compile Include="Model\BaseResponse.cs" />
+    <Compile Include="Model\Enum\AccessType.cs" />
+    <Compile Include="Model\Enum\ActionType.cs" />
     <Compile Include="Model\Enum\StatusCode.cs" />
     <Compile Include="Model\Enum\TransferType.cs" />
     <Compile Include="Model\Request\OrderRequest.cs" />
     <Compile Include="Model\Response\Client.cs" />
-    <Compile Include="Model\Enum\ActionType.cs" />
-    <Compile Include="Model\Enum\RightType.cs" />
     <Compile Include="Model\Request\AuthRequest.cs" />
+    <Compile Include="Model\Response\UserAndRight.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Auth.resx">

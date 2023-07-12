@@ -15,7 +15,7 @@ namespace OrderStep.Api.Intregration
         /// </summary>
         /// <param name="order"></param>
         /// <returns></returns>
-        BaseResponse<bool> SaveOrder(List<OrderRequest> order);
+        BaseResponse<bool> SaveOrder(OrderRequest order);
 
         /// <summary>
         /// Получение свободного Id

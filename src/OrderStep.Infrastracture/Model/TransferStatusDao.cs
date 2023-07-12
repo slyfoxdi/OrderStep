@@ -31,6 +31,11 @@ namespace OrderStep.Infrastracture.Model
         /// <summary>
         /// Отменен
         /// </summary>
-        Canceled = 50
+        Canceled = 50,
+
+        /// <summary>
+        /// Создана
+        /// </summary>
+        Created = 60
     }
 }

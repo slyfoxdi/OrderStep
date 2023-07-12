@@ -13,12 +13,12 @@ namespace OrderStep.WebApi.Controllers
         /// <param name="login">Логин</param>
         /// <param name="password">Шифрованный пароль</param>
         /// <returns>Клиентские данные</returns>
-        [HttpGet(nameof(Authentification))]
-        public async Task<BaseResponse<Client>> Authentification(string login, string password, CancellationToken cancellationToken)
+        [HttpPost(nameof(Authentification))]
+        public async Task<BaseResponse<Client>> Authentification(Auth credential, CancellationToken cancellationToken)
         {
             try
             {
-                var command = new AuthentificationCommand(login, password);
+                var command = new AuthentificationCommand(credential.Login, credential.Password);
                 var request = await _mediator.Send(command, cancellationToken);
                 var result = _mapper.Map<BaseResponse<Client>>(request);
 

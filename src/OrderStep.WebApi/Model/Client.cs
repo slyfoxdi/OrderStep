@@ -26,5 +26,10 @@
         /// Id роли
         /// </summary>
         public int Role { get; set; }
+
+        /// <summary>
+        /// Права доступа
+        /// </summary>
+        public List<UserAndRight> Rights { get; set; }
     }
 }

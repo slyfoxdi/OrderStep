@@ -50,9 +50,39 @@ namespace OrderStep.Api
                 return;
             }
 
-            if (auth.Status == StatusCode.Success)
+            if (auth.Status != StatusCode.Success || !auth.Response.Rights.Any())
+            {
+                loginTextBox.Text = string.Empty;
+                passwordTextBox.Text = string.Empty;
+                authLabel1.Text = "Не удалось загрузить права доступа";
+                authLabel1.ForeColor = Color.Red;
+                return;
+            }
+
+            var rights = auth.Response.Rights;
+            var authRight = rights.FirstOrDefault(x => x.Action == ActionType.Auth);
+            var transferRight = rights.FirstOrDefault(x => x.Action == ActionType.Transfer);
+            var orderRight = rights.FirstOrDefault(x => x.Action == ActionType.Order);
+
+            if (authRight.Access == AccessType.None)
+            {
+                loginTextBox.Text = string.Empty;
+                passwordTextBox.Text = string.Empty;
+                authLabel1.Text = "У вас нет доступа в системе";
+                authLabel1.ForeColor = Color.Red;
+                return;
+            }
+
+            if (orderRight?.Access != null && (int)orderRight?.Access > 1)
             {
                 var form2 = new Order(auth.Response);
+                form2.Show(this);
+                Hide();
+            }
+
+            if (transferRight?.Access != null && (int)transferRight?.Access > 1)
+            {
+                var form2 = new Transfer(auth.Response);
                 form2.Show(this);
                 Hide();
             }

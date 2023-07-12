@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
-using OrderStep.Api.Extension.Helper;
+using OrderStep.Api.Helper;
 using OrderStep.Api.Model;
 using OrderStep.Api.Model.Request;
+using OrderStep.Api.Model.Response;
 using OrderStep.Domain.Extension.Http;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,8 @@ namespace OrderStep.Api.Intregration
         public BaseResponse<Client> Authentification(string login, string password)
         {
             var request = new AuthRequest(login, PasswordCrypt.CreateMD5(password));
-            var result = _httpClientService.Get("api/Auth/Authentification", request);
+            var jsonObject = JsonConvert.SerializeObject(request);
+            var result = _httpClientService.Post("api/Auth/Authentification", jsonObject);
             var content = result.Content.ReadAsStringAsync().Result;
             var response = JsonConvert.DeserializeObject<BaseResponse<Client>>(content);
 

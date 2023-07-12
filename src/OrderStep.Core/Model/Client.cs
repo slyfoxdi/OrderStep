@@ -31,6 +31,6 @@ namespace OrderStep.Core.Model
         /// <summary>
         /// Id роли
         /// </summary>
-        public int Role { get; set; }
+        public List<UserAndRight> Rights { get; set; }
     }
 }

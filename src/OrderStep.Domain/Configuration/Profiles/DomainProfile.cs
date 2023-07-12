@@ -13,7 +13,7 @@ namespace OrderStep.Domain.Configuration.Profiles
     {
         public DomainProfile()
         {
-            CreateMap<OrderDao, Order>();
+            CreateMap<Order, OrderDao>();
         }
     }
 }

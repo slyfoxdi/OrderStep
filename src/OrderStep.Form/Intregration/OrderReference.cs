@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using OrderStep.Api.Extension.Helper;
 using OrderStep.Api.Model;
 using OrderStep.Api.Model.Request;
 using OrderStep.Domain.Extension.Http;
@@ -31,9 +30,10 @@ namespace OrderStep.Api.Intregration
         }
 
         /// <inheritdoc/>>
-        public BaseResponse<bool> SaveOrder(List<OrderRequest> order)
+        public BaseResponse<bool> SaveOrder(OrderRequest order)
         {
-            var result = _httpClientService.Get("api/Order/SaveOrder", order);
+            var jsonObject = JsonConvert.SerializeObject(order);
+            var result = _httpClientService.Post("api/Order/SaveOrder", jsonObject);
             var content = result.Content.ReadAsStringAsync().Result;
             var response = JsonConvert.DeserializeObject<BaseResponse<bool>>(content);
 

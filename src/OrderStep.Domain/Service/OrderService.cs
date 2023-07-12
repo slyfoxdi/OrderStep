@@ -26,12 +26,12 @@ namespace OrderStep.Domain.Service
             return await _orderRepository.GetFreeOrderId(cancellationToken);
         }
 
-        public async Task<bool> SaveNewOrder(IList<Order> order, CancellationToken cancellationToken)
+        public async Task<bool> SaveNewOrder(Order order, CancellationToken cancellationToken)
         {
-            var orderModel = _mapper.Map<List<OrderDao>>(order);
-            orderModel.ForEach(x => x.TransferStatus = TransferStatusDao.New);
+            var orderModel = _mapper.Map<OrderDao>(order);
+            orderModel.TransferStatus = TransferStatusDao.New;
 
-            return await _orderRepository.SaveOrderList(orderModel, cancellationToken);
+            return await _orderRepository.SaveOrder(orderModel, cancellationToken);
         }
     }
 }

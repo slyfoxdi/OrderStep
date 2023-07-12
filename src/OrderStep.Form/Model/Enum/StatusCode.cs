@@ -14,6 +14,11 @@ namespace OrderStep.Api.Model.Enum
         Success = 0,
 
         /// <summary>
+        /// Ошибка сохранения
+        /// </summary>
+        FailedSaveOrder = 10,
+
+        /// <summary>
         /// Неудачная авторизация
         /// </summary>
         FailedAuthentification = 100,

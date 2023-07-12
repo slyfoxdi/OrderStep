@@ -34,6 +34,7 @@ namespace OrderStep.Infrastracture.Repository.Orders
             var orderDao = new OrderDao() 
             { 
                 OrderId = lastOrderId,
+                TransferStatus = TransferStatusDao.Created
             };
 
             await _context.Orders.AddAsync(orderDao, cancellationToken);
@@ -43,9 +44,24 @@ namespace OrderStep.Infrastracture.Repository.Orders
         }
 
         /// <inheritdoc/>
-        public async Task<bool> SaveOrderList(IList<OrderDao> order, CancellationToken cancellationToken)
+        public async Task<bool> SaveOrder(OrderDao order, CancellationToken cancellationToken)
         {
-            _context.Orders.UpdateRange(order);
+            var orderDao = _context.Orders.FirstOrDefault(x => x.OrderId == order.OrderId);
+
+            if (orderDao == null)
+            {
+                return false;
+            }
+
+            orderDao.Address = order.Address;
+            orderDao.Price = order.Price;
+            orderDao.VendorCode = order.VendorCode;
+            orderDao.DateLastUpdate = order.DateLastUpdate;
+            orderDao.Count = order.Count;
+            orderDao.Weight = order.Weight;
+            orderDao.Name = order.Name;
+            orderDao.TransferStatus = order.TransferStatus;
+
             var result = await _context.SaveChangesAsync(cancellationToken);
 
             return result > 0;

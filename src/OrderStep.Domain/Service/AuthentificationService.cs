@@ -40,6 +40,11 @@ namespace OrderStep.Domain.Service
                         Id = userId,
                         FirstName = user.FirstName,
                         LastName = user.LastName,
+                        Rights = userAndRight.Select(x => new UserAndRight()
+                        {
+                            Access = (AccessType)x.Right.Id,
+                            Action = (ActionType)x.Action.Id
+                        }).ToList()
                     },
                     Message = "Успешная авторизация",
                     Status = StatusCode.Success
