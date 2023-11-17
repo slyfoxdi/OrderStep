@@ -32,5 +32,10 @@ namespace OrderStep.Core.Model
         /// Id роли
         /// </summary>
         public List<UserAndRight> Rights { get; set; }
+
+        /// <summary>
+        /// Jwt токен
+        /// </summary>
+        public string AccessToken { get; set; }
     }
 }

@@ -4,7 +4,6 @@ using OrderStep.WebApi.Model;
 
 namespace OrderStep.WebApi.Controllers
 {
-    [Route("api/Auth")]
     public partial class BaseController
     {
         /// <summary>
@@ -14,7 +13,7 @@ namespace OrderStep.WebApi.Controllers
         /// <param name="password">Шифрованный пароль</param>
         /// <returns>Клиентские данные</returns>
         [HttpPost(nameof(Authentification))]
-        public async Task<BaseResponse<Client>> Authentification(Auth credential, CancellationToken cancellationToken)
+        public async Task<BaseResponse<Client>> Authentification([FromBody]Auth credential, CancellationToken cancellationToken)
         {
             try
             {

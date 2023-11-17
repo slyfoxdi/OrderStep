@@ -7,6 +7,8 @@ using NLog;
 using NLog.Web;
 using OrderStep.Application.Configuration.Profiles;
 using OrderStep.Domain.Configuration.Profiles;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using OrderStep.Core.Extension;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 
@@ -28,6 +30,7 @@ try
     var connection = builder.Configuration.GetConnectionString("DefaultConnection");
     builder.Services
         .AddEntityFrameworkSqlServer()
+        .AddAuthorizationJwtToken()
         .AddDbContext<ApplicationContext>((serviceProvider, options) =>
         {
             options.UseSqlServer(connection);
@@ -62,6 +65,7 @@ try
 
     app.UseHttpsRedirection();
 
+    app.UseAuthentication();
     app.UseAuthorization();
 
     app.MapControllers();

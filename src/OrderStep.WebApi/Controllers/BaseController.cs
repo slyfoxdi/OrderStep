@@ -5,6 +5,7 @@ using MediatR;
 namespace OrderStep.WebApi.Controllers
 {
     [ApiController]
+    [Route("api")]
     public partial class BaseController : Controller
     {
         protected readonly IMediator _mediator;

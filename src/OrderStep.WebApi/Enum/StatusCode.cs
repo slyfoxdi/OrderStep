@@ -24,9 +24,14 @@ namespace OrderStep.WebApi.Enum
         FailedAuthentification = 100,
 
         /// <summary>
+        /// Ошибка на сервере
+        /// </summary>
+        ServerError = 500,
+
+        /// <summary>
         /// Неизвестная ошибка
         /// </summary>
-        Unknown = 500,
+        Unknown = 999,
 
 
     }

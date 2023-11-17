@@ -7,7 +7,6 @@ using CoreApp = OrderStep.Core.Model;
 
 namespace OrderStep.WebApi.Controllers
 {
-    [Route("api/Order")]
     public partial class BaseController
     {
         [HttpPost(nameof(SaveOrder))]
